@@ -1,0 +1,5 @@
+com/grpcsample/client/dto/BalanceDetails.class
+com/grpcsample/client/dto/PassBookDetails.class
+com/grpcsample/client/service/PassbookServiceClient.class
+com/grpcsample/ClientApplication.class
+com/grpcsample/client/controller/ClientController.class

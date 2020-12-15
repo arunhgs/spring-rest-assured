@@ -1,0 +1,4 @@
+com/grpcsample/passbook/PassbookApplication.class
+com/grpcsample/passbook/repository/PassbookRepository.class
+com/grpcsample/passbook/entity/Passbook.class
+com/grpcsample/passbook/service/PassbookService.class
