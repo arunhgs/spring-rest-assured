@@ -9,7 +9,6 @@ import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,9 +25,8 @@ public class PassbookService  extends PassbookServiceGrpc.PassbookServiceImplBas
         List<PassBookDTO> passBookDTOList=this.passbookRepository.getPassbookByUserId(request.getUserId()).stream().map(
 
                 passbook ->
-                        PassBookDTO.newBuilder().setTxnAmount(
-                                "1").
-                                setMerchantName("test").build()).collect(Collectors.toList());
+                        PassBookDTO.newBuilder().setTxnAmount(passbook.getTxnAmount()).
+                                setMerchantName("test").setUserId(passbook.getUserId()).build()).collect(Collectors.toList());
 
 //        PassBookDTO dto = PassBookDTO.newBuilder().setTxnAmount("1").
 //                setMerchantName("test").build();
