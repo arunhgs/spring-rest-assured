@@ -1,7 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Spring Rest Assured TestNg GRPC Demo">
+<suite name="Spring Rest Assured TestNg Test Demo">
     <test name="Demo Test">
         <classes>
+            <class name="com.grpcsample.controller.UserControllerTest" />
+            <class name="com.grpcsample.service.UserServiceTest" />
+            <class name="com.grpcsample.service.UserServiceMockTest" />
             <class name="com.grpcsample.passbook.service.SpringBootGrpcTest" />
             <class name="com.grpcsample.client.controller.ClientControllerTest" />
         </classes>

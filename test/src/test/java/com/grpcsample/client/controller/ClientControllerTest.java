@@ -1,15 +1,10 @@
 package com.grpcsample.client.controller;
 
 import com.grpcsample.BaseSpringBootTest;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.CoreMatchers.is;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ClientControllerTest  extends BaseSpringBootTest {
 
     @Test(groups = "integration")

@@ -9,12 +9,10 @@ import com.sample.grpcsample.passbookService.PassbookResponseResponse;
 import com.sample.grpcsample.passbookService.PassbookServiceGrpc;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
-
 import java.util.Iterator;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,12 +26,7 @@ public class SpringBootGrpcTest extends BaseSpringBootTest {
     @Autowired
     private PassbookRepository passbookRepository;
 
-    @Test(groups = {"integration","unit"})
-    public void contextLoads() throws Exception {
-        System.out.println("Hello.....");
-    }
-
-    @Test(groups = "unit")
+    @Test(groups = "integration")
     public void getTransactionHistory(){
         PassbookRequest passbookRequest = PassbookRequest.newBuilder().setUserId("1").build();
         PassbookResponseResponse passbookResponse =
@@ -43,7 +36,7 @@ public class SpringBootGrpcTest extends BaseSpringBootTest {
         assertEquals(2,passbookResponse.getPassbookDTOList().size());
     }
 
-    @Test(groups = "unit", dataProvider = "passbookObjects")
+    @Test(groups = "integration", dataProvider = "passbookObjects")
     public void getTransactionHistoryDataDrivenDB(Passbook passbook){
         PassbookRequest passbookRequest = PassbookRequest.newBuilder().setUserId(passbook.getUserId()).build();
         PassbookResponseResponse passbookResponse =

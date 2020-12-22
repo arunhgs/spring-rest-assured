@@ -28,11 +28,6 @@ public class PassbookService  extends PassbookServiceGrpc.PassbookServiceImplBas
                         PassBookDTO.newBuilder().setTxnAmount(passbook.getTxnAmount()).
                                 setMerchantName("test").setUserId(passbook.getUserId()).build()).collect(Collectors.toList());
 
-//        PassBookDTO dto = PassBookDTO.newBuilder().setTxnAmount("1").
-//                setMerchantName("test").build();
-//        List<PassBookDTO> passBookDTOList = new ArrayList<>();
-//        passBookDTOList.add(dto);
-
         responseObserver.onNext(builder.addAllPassbookDTO(passBookDTOList).build());
         responseObserver.onCompleted();
     }

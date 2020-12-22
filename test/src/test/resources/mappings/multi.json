@@ -1,0 +1,38 @@
+{
+  "mappings": [
+
+    {
+      "request": {
+        "urlPath": "/dynamicResponse",
+        "method": "POST",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.tokenId == '124')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{{{request.body}}}",
+        "transformers" : [ "response-template" ]
+      }
+    },
+
+    {
+      "request": {
+        "urlPath": "/dynamicResponse",
+        "method": "POST",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.tokenId == '125')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "Hello Body 125"
+      }
+    }
+
+  ]
+}

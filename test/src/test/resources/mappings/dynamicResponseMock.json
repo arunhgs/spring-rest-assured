@@ -1,0 +1,15 @@
+{
+  "request": {
+    "urlPath": "/dynamicResponse",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.tokenId == '123')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "Hello Body 123 {{jsonPath request.body '$.tokenId'}}"
+  }
+}
