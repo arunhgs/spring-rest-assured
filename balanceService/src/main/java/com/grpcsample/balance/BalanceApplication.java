@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BalanceApplication {
 
     public static void main(String[] args) {
+        System.out.println("test");
         SpringApplication.run(BalanceApplication.class,args);
     }
 }
